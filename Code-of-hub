@@ -1,0 +1,501 @@
+if KeyCode == "Y4QXwlAqhL2blAzVtZP" then
+if game.PlaceId == 189707 then
+	local ildababy=1
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	local Window = OrionLib:MakeWindow({Name = "Natural Disaster Survival", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+	--Main
+	local Main = Window:MakeTab({
+		Name = "Main",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local GameSection = Main:AddSection({
+		Name = "Game"
+	})
+	Main:AddToggle({
+	Name = "AutoFarm",
+	Default = false,
+	Callback = function(Value)
+		if ildababy==0 then
+			ildababy=1
+		elseif ildababy==1 then
+			ildababy=0
+		end
+		while ildababy==1 do
+			wait(0.1)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-339.666565, 194.399994, 342.054016, -0.874312937, -1.05077271e-08, -0.485362619, -7.14756894e-08, 1, 1.07104235e-07, 0.485362619, 1.2833425e-07, -0.874312937)
+		end
+	end    
+})
+	local TeleportSection = Main:AddSection({
+		Name = "Teleport"
+	})
+	Main:AddButton({
+	Name = "To Map",
+	Callback = function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-135.98909, 47.3999977, 27.1698742, -0.00102862192, 2.03599715e-08, -0.999999464, -5.05820026e-08, 1, 2.04120116e-08, 0.999999464, 5.06029743e-08, -0.00102862192)
+  	end    
+	})
+	Main:AddButton({
+	Name = "To Lobby",
+	Callback = function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.141479, 179.559998, 306.664093, 0.628843844, 1.54830004e-09, -0.777531624, -1.57854174e-08, 1, -1.07754614e-08, 0.777531624, 1.90497431e-08, 0.628843844)
+  	end    
+	})
+	local PlayerSection = Main:AddSection({
+		Name = "Player"
+	})
+	Main:AddButton({
+	Name = "Destroy Fall Damage",
+	Callback = function()
+			game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+  	end    
+	})
+	
+
+
+	--Player
+	local Player = Window:MakeTab({
+		Name = "LocalPlayer",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Player:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+	})
+	Player:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value2)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value2
+	end    
+	})
+	Player:AddButton({
+	Name = "Reset Character",
+	Callback = function()
+			game.Players.LocalPlayer.Character:Destroy()
+  	end    
+	})
+
+
+	--Global
+	local Global = Window:MakeTab({
+		Name = "Global",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local GameSection2 = Global:AddSection({
+		Name = "Game"
+	})
+	Global:AddTextbox({
+	Name = "Spam (6)",
+	Default = "Msg",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i = 1, 6 do
+			local args = {
+    			[1] = Value,
+   				[2] = "All"
+			}
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+		end
+	end	  
+	})
+	local PlayerSection2 = Global:AddSection({
+		Name = "Player"
+	})
+	Global:AddButton({
+	Name = "Force Jump",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/GVcPMnQX")))()
+  	end    
+	})
+	Global:AddButton({
+	Name = "Fly (G to Toggle)",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/43PRB8XF")))()
+  	end    
+	})
+
+	--Visual
+	local Visual = Window:MakeTab({
+		Name = "Visual",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Visual:AddButton({
+	Name = "Full Bright",
+	Callback = function()
+			game.Lighting.Brightness = math.huge
+			game.Lighting.ClockTime = 12
+  	end    
+	})
+	Visual:AddButton({
+	Name = "No Fog",
+	Callback = function()
+			game.Lighting.FogStart = math.huge
+			game.Lighting.FogEnd = math.huge
+  	end  
+	})
+	Visual:AddButton({
+	Name = "Camera Unlock",
+	Callback = function()
+			game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge
+  	end  
+	})
+	--Credits
+	local Credits = Window:MakeTab({
+		Name = "Credits",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Credits:AddButton({
+	Name = "ZeroDay_!#2274",
+	Callback = function()
+      		setclipboard(tostring("ZeroDay_!#2274"))
+			OrionLib:MakeNotification({
+			Name = "Copied!",
+			Content = "Copied To Clipboard.",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+  	end    
+})
+end
+if game.PlaceId == 4620170611 then
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	local Window = OrionLib:MakeWindow({Name = "Break In", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+	
+	--Main
+	local Main = Window:MakeTab({
+		Name = "Main",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Main:AddButton({
+	Name = "The cats friend",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").RemoteEvents.Cattery:FireServer()
+  	end    
+})
+	Main:AddButton({
+	Name = "Unlock Door to Basement",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").RemoteEvents.UnlockDoor:FireServer()
+
+  	end    
+})
+	Main:AddButton({
+	Name = "Heal (105)",
+	Callback = function()
+		for i = 1, 7 do
+		local args = {
+    		[1] = "BloxyCola"
+		}	
+		game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer(unpack(args))
+		local args = {
+   			[1] = 15,
+    		[2] = "BloxyCola"
+		}
+		game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer(unpack(args))
+		end
+  	end    
+})
+	Main:AddDropdown({
+	Name = "Give",
+	Default = "1", 
+	Options = {"Apple", "Chips", "BloxyCola", "Plank", "Pizza", "CarKey", "Cookie", "Pie", "MedKit","Bat","Key"},
+	Callback = function(Value)
+		if Value == "Pizza" then
+			local args = {
+    			[1] = "Pizza3"
+			}
+			game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer(unpack(args))
+		else
+			local args = {
+    			[1] = Value
+			}
+			game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer(unpack(args))
+		end
+	end    
+	})
+	--Player
+	local Player = Window:MakeTab({
+		Name = "LocalPlayer",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Player:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+	})
+	Player:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value2)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value2
+	end    
+	})
+	Player:AddButton({
+	Name = "Reset Character",
+	Callback = function()
+			game.Players.LocalPlayer.Character:Destroy()
+  	end    
+	})п
+--Global
+	local Global = Window:MakeTab({
+		Name = "Global",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local GameSection2 = Global:AddSection({
+		Name = "Game"
+	})
+	Global:AddTextbox({
+	Name = "Spam (6)",
+	Default = "Msg",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i = 1, 6 do
+			local args = {
+    			[1] = Value,
+   				[2] = "All"
+			}
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+		end
+	end	  
+	})
+	local PlayerSection2 = Global:AddSection({
+		Name = "Player"
+	})
+	Global:AddButton({
+	Name = "Force Jump",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/GVcPMnQX")))()
+  	end    
+	})
+	Global:AddButton({
+	Name = "Fly (G to Toggle)",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/43PRB8XF")))()
+  	end    
+	})
+	--Visual
+	local Visual = Window:MakeTab({
+		Name = "Visual",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Visual:AddButton({
+	Name = "Full Bright",
+	Callback = function()
+			game.Lighting.Brightness = math.huge
+			game.Lighting.ClockTime = 12
+  	end    
+	})
+	Visual:AddButton({
+	Name = "No Fog",
+	Callback = function()
+			game.Lighting.FogStart = math.huge
+			game.Lighting.FogEnd = math.huge
+  	end  
+	})
+	Visual:AddButton({
+	Name = "Camera Unlock",
+	Callback = function()
+			game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge
+  	end  
+	})
+	--Credits
+	local Credits = Window:MakeTab({
+		Name = "Credits",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Credits:AddButton({
+	Name = "ZeroDay_!#2274",
+	Callback = function()
+      		setclipboard(tostring("ZeroDay_!#2274"))
+			OrionLib:MakeNotification({
+			Name = "Copied!",
+			Content = "Copied To Clipboard.",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+  	end    
+})
+end
+if game.PlaceId == 5874128725 then
+	local ildababy = 1
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	local Window = OrionLib:MakeWindow({Name = "No Jumping Difficulty Chart Obby", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+	--Main
+	local Main = Window:MakeTab({
+		Name = "Main",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Main:AddToggle({
+	Name = "EnableJumping",
+	Default = false,
+	Callback = function(Value)
+		if ildababy==0 then
+			ildababy=1
+		elseif ildababy==1 then
+			ildababy=0
+		end
+		while ildababy==1 do
+			wait(0.1)
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+		end
+	end    
+})
+	--Player
+	local Player = Window:MakeTab({
+		Name = "LocalPlayer",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Player:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+	})
+	Player:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value2)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value2
+	end    
+	})
+	Player:AddButton({
+	Name = "Reset Character",
+	Callback = function()
+			game.Players.LocalPlayer.Character:Destroy()
+  	end    
+	})
+	--Global
+	local Global = Window:MakeTab({
+		Name = "Global",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local GameSection2 = Global:AddSection({
+		Name = "Game"
+	})
+	Global:AddTextbox({
+	Name = "Spam (6)",
+	Default = "Msg",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i = 1, 6 do
+			local args = {
+    			[1] = Value,
+   				[2] = "All"
+			}
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+		end
+	end	  
+	})
+	local PlayerSection2 = Global:AddSection({
+		Name = "Player"
+	})
+	Global:AddButton({
+	Name = "Force Jump",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/GVcPMnQX")))()
+  	end    
+	})
+	Global:AddButton({
+	Name = "Fly (G to Toggle)",
+	Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/43PRB8XF")))()
+  	end    
+	})
+	--Visual
+	local Visual = Window:MakeTab({
+		Name = "Visual",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Visual:AddButton({
+	Name = "Full Bright",
+	Callback = function()
+			game.Lighting.Brightness = math.huge
+			game.Lighting.ClockTime = 12
+  	end    
+	})
+	Visual:AddButton({
+	Name = "No Fog",
+	Callback = function()
+			game.Lighting.FogStart = math.huge
+			game.Lighting.FogEnd = math.huge
+  	end  
+	})
+	Visual:AddButton({
+	Name = "Camera Unlock",
+	Callback = function()
+			game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge
+  	end  
+	})
+	--Credits
+	local Credits = Window:MakeTab({
+		Name = "Credits",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	Credits:AddButton({
+	Name = "ZeroDay_!#2274",
+	Callback = function()
+      		setclipboard(tostring("ZeroDay_!#2274"))
+			OrionLib:MakeNotification({
+			Name = "Copied!",
+			Content = "Copied To Clipboard.",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+  	end    
+})
+end
+end
